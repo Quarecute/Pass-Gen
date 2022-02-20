@@ -1,0 +1,57 @@
+# passgen or password creator
+import time
+import random
+import shutil
+from fuzzywuzzy import fuzz
+from colorama import init
+from colorama import Fore, Back, Style # Fore - текст, Back - фон, Style - тусклый(dim), нормальный(normal) или яркий(bright)
+
+print('Приветствую в программе passgen для создания пароля!')
+time.sleep(3)
+for_what = input('\nДля чего вы хотите создать пароль?\n Примеры: \nБраузер (или его название),\nSteam, origin, GOG, Uplay, и т.д.\nЧто-то другое\n')
+
+kol = int(input('Введите количество паролей: '))
+
+rand_alp = 'QqWwEeRrTtYyUuIiOoPpAaSsDdFfGgHhJjKkLlZzXxCcVvBbNnMm1234567890!@#$%^&*()№?<>:;}]{[/'
+saved_pass = ''
+
+def simg(kol,lenght):
+	global saved_pass
+	global for_what
+	line = 0
+	dict1 = {
+
+			}
+	for x in range(kol):
+		line += 1
+		password = ''
+		for i in range(lenght):
+			password += random.choice(rand_alp)
+			dict1[line] = password
+		continue
+	print(dict1)
+
+	choose = int(input('Введите цифру, которая Вам понравилась: '))
+	for key in dict1.keys():
+		if choose == key:
+			saved_pass += dict1[key]
+			shutil.disk_usage('C:\\Users\\Qwerty\\Desktop')
+			txt = open('passwords.txt', 'a')
+			txt.write('\n' + saved_pass + ' ' + '-->' + ' ' + for_what)
+			txt.close()
+			shutil.copyfile('D:\\python\\' + 'passwords.txt', 'C:\\Users\\Qwerty\\Desktop\\' + 'pass.txt')
+		else:
+			continue
+
+if (((fuzz.ratio(for_what.lower(), 'Steam')) > 50 or (fuzz.ratio(for_what.lower(), 'Origin')) > 50 or (fuzz.ratio(for_what.lower(), 'Uplay')) > 50 or ((fuzz.ratio(for_what.lower(), 'Epic Games')) > 50 or (fuzz.ratio(for_what.lower(), 'GOG')) > 50 or (fuzz.ratio(for_what.lower(), 'Battle.net')) > 50))):
+	lenght = random.randint(15,25)
+	simg(kol,lenght)
+	print('Ваш пароль: ' + saved_pass)
+elif (((fuzz.ratio(for_what.lower(),'браузер'))) > 50 or (fuzz.ratio(for_what.lower(), 'chrome')) > 50 or (fuzz.ratio(for_what.lower(), 'yandex')) > 50 or (fuzz.ratio(for_what.lower(), 'amigo')) > 50 or (fuzz.ratio(for_what.lower(), 'tor')) > 50 or (fuzz.ratio(for_what.lower(), 'opera')) > 50 or (fuzz.ratio(for_what.lower(), 'mozila')) > 50 or (fuzz.ratio(for_what.lower(), 'firefox')) > 50 or (fuzz.ratio(for_what.lower(), 'edge')) > 50 or (fuzz.ratio(for_what.lower(), 'safari')) > 50 or (fuzz.ratio(for_what.lower(), 'explorer')) > 50 or (fuzz.ratio(for_what.lower(), 'brave')) > 50):
+	lenght = random.randint(7,30)
+	simg(kol,lenght)
+	print('Ваш пароль: ' + saved_pass)
+else: 
+	lenght = int(input('Какую длину пароля Вы хотите? \n'))
+	simg(kol,lenght)
+	print('Ваш пароль: ' + saved_pass)

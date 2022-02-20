@@ -1,11 +1,9 @@
 # passgen or password creator
-import time
 import random
 import shutil
 from fuzzywuzzy import fuzz
 
 print('Приветствую в программе passgen для создания пароля!')
-time.sleep(3)
 for_what = input('\nДля чего вы хотите создать пароль?\n Примеры: \nБраузер (или его название),\nSteam, origin, GOG, Uplay, и т.д.\nЧто-то другое\n')
 
 kol = int(input('Введите количество паролей: '))

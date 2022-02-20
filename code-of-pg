@@ -49,13 +49,18 @@ def simg(kol,lenght):
 if (((fuzz.ratio(for_what.lower(), 'Steam')) > 50 or (fuzz.ratio(for_what.lower(), 'Origin')) > 50 or (fuzz.ratio(for_what.lower(), 'Uplay')) > 50 or ((fuzz.ratio(for_what.lower(), 'Epic Games')) > 50 or (fuzz.ratio(for_what.lower(), 'GOG')) > 50 or (fuzz.ratio(for_what.lower(), 'Battle.net')) > 50))):
 	lenght = random.randint(15,25)
 	simg(kol,lenght)
-	print('Ваш пароль: ' + saved_pass)
+	print('\nВаш пароль: ' + saved_pass)
 	print('\nПосмотрите в папку, чтобы увидеть текстовый документ с паролями\n')
+	time.sleep(3)
 elif (((fuzz.ratio(for_what.lower(),'браузер'))) > 50 or (fuzz.ratio(for_what.lower(), 'chrome')) > 50 or (fuzz.ratio(for_what.lower(), 'yandex')) > 50 or (fuzz.ratio(for_what.lower(), 'amigo')) > 50 or (fuzz.ratio(for_what.lower(), 'tor')) > 50 or (fuzz.ratio(for_what.lower(), 'opera')) > 50 or (fuzz.ratio(for_what.lower(), 'mozila')) > 50 or (fuzz.ratio(for_what.lower(), 'firefox')) > 50 or (fuzz.ratio(for_what.lower(), 'edge')) > 50 or (fuzz.ratio(for_what.lower(), 'safari')) > 50 or (fuzz.ratio(for_what.lower(), 'explorer')) > 50 or (fuzz.ratio(for_what.lower(), 'brave')) > 50):
 	lenght = random.randint(7,30)
 	simg(kol,lenght)
-	print('Ваш пароль: ' + saved_pass)
+	print('\nВаш пароль: ' + saved_pass)
+	print('\nПосмотрите в папку, чтобы увидеть текстовый документ с паролями\n')
+	time.sleep(3)
 else: 
 	lenght = int(input('Какую длину пароля Вы хотите? \n'))
 	simg(kol,lenght)
-	print('Ваш пароль: ' + saved_pass)
+	print('\nВаш пароль: ' + saved_pass)
+	print('\nПосмотрите в папку, чтобы увидеть текстовый документ с паролями\n')
+	time.sleep(3)

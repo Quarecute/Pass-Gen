@@ -3,8 +3,6 @@ import time
 import random
 import shutil
 from fuzzywuzzy import fuzz
-from colorama import init
-from colorama import Fore, Back, Style # Fore - текст, Back - фон, Style - тусклый(dim), нормальный(normal) или яркий(bright)
 
 print('Приветствую в программе passgen для создания пароля!')
 time.sleep(3)

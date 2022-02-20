@@ -1,9 +1,11 @@
 # passgen or password creator
 import random
 import shutil
+import time
 from fuzzywuzzy import fuzz
 
 print('Приветствую в программе passgen для создания пароля!')
+time.sleep(1)
 for_what = input('\nДля чего вы хотите создать пароль?\n Примеры: \nБраузер (или его название),\nSteam, origin, GOG, Uplay, и т.д.\nЧто-то другое\n')
 
 kol = int(input('Введите количество паролей: '))
@@ -31,11 +33,11 @@ def simg(kol,lenght):
 	for key in dict1.keys():
 		if choose == key:
 			saved_pass += dict1[key]
-			shutil.disk_usage('C:\\Users\\Qwerty\\Desktop')
 			txt = open('passwords.txt', 'a')
 			txt.write('\n' + saved_pass + ' ' + '-->' + ' ' + for_what)
 			txt.close()
-			shutil.copyfile('D:\\python\\' + 'passwords.txt', 'C:\\Users\\Qwerty\\Desktop\\' + 'pass.txt')
+			print('\nПосмотрите в папку.\n')
+			time.sleep(2)
 		else:
 			continue
 
